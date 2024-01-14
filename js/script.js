@@ -15,6 +15,11 @@ class ButtonMemoryGame {
     init() {
         this.root.innerHTML = ''
         this.createUI();
+        canPick = false
+        nextPick = 0
+        numBoxes = null
+        this.boxes = []
+        this.color.reset()
         // Additional initialization
     }
     
