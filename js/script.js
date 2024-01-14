@@ -3,9 +3,8 @@ let canPick = false
 let nextPick = 0
 let numBoxes = null
 
-import winMessage from '../lang/messages/user.js'
-import loseMessage from '../lang/messages/user.js'
-import askForBoxes from '../lang/messages/user.js'
+import {winMessage, loseMessage, askForBoxes} from '../lang/messages/user.js'
+
 
 class ButtonMemoryGame {
 
