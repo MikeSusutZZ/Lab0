@@ -23,7 +23,7 @@ class ButtonMemoryGame {
         numBoxes = null
         this.boxes = []
         this.color.reset()
-        // Additional initialization
+        
     }
     
 
@@ -52,8 +52,10 @@ class ButtonMemoryGame {
         goButton.textContent = 'Go';
         goButton.addEventListener('click', () => {
             numBoxes = document.getElementById('numButtons').value;
-            this.root.removeChild(uiContainer); // Remove the UI container
-            this.viewOrder(numBoxes);
+            if (numBoxes >= 3 && numBoxes <= 7){
+                this.root.removeChild(uiContainer); // Remove the UI container
+                this.viewOrder(numBoxes);
+            }
         });
         uiContainer.appendChild(goButton);
     
