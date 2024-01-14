@@ -3,6 +3,9 @@ let canPick = false
 let nextPick = 0
 let numBoxes = null
 
+import winMessage from '../lang/messages/user.js'
+import loseMessage from '../lang/messages/user.js'
+
 class ButtonMemoryGame {
 
 
@@ -111,7 +114,7 @@ class ButtonMemoryGame {
         // Logic to execute when the player wins
         canPick = false
         setTimeout(() => {
-            alert("Excellent Memory!");
+            alert(winMessage);
             this.init(); // Reset the game after a delay
         }, 300);
     }
@@ -121,7 +124,7 @@ class ButtonMemoryGame {
         canPick = false;
         // Set a timeout before resetting the game
         setTimeout(() => {
-            alert("Wrong order!");
+            alert(loseMessageMessage);
             this.init(); // Reset the game after a delay
         }, 300); // Delay in milliseconds, e.g., 2000 milliseconds = 2 seconds
     }
@@ -198,9 +201,6 @@ class ColorPicker {
     }
 
     getRandomColor() {
-        if (this.colors.length === 0) {
-            throw new Error("No more colors available");
-        }
 
         const randomIndex = Math.floor(Math.random() * this.colors.length);
         const selectedColor = this.colors.splice(randomIndex, 1)[0];
