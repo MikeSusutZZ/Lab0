@@ -3,7 +3,9 @@ let canPick = false
 let nextPick = 0
 let numBoxes = null
 
-import messages from "../lang/messages/user";
+import winMessage from '../lang/messages/user.js'
+import loseMessage from '../lang/messages/user.js'
+import askForBoxes from '../lang/messages/user.js'
 
 class ButtonMemoryGame {
 
@@ -34,7 +36,7 @@ class ButtonMemoryGame {
         // Create and append the label
         const label = document.createElement('label');
         label.setAttribute('for', 'numButtons');
-        label.textContent = messages.askForBoxes;
+        label.textContent = askForBoxes;
         uiContainer.appendChild(label);
     
         // Create and append the input
@@ -113,7 +115,7 @@ class ButtonMemoryGame {
         // Logic to execute when the player wins
         canPick = false
         setTimeout(() => {
-            alert(messages.winMessage);
+            alert(winMessage);
             this.init(); // Reset the game after a delay
         }, 300);
     }
@@ -123,7 +125,7 @@ class ButtonMemoryGame {
         canPick = false;
         // Set a timeout before resetting the game
         setTimeout(() => {
-            alert(messages.loseMessage);
+            alert(loseMessage);
             this.init(); // Reset the game after a delay
         }, 300); // Delay in milliseconds, e.g., 2000 milliseconds = 2 seconds
     }
