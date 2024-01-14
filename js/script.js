@@ -108,7 +108,7 @@ class ButtonMemoryGame {
         }
         setTimeout(() => {
             canPick = true;
-        }, numShuffles * 2000);
+        }, (numShuffles - 1) * 2000);
     }
 
     win() {
