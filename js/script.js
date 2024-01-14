@@ -102,7 +102,9 @@ class ButtonMemoryGame {
                 });
             }, i * 2000); // Shuffle every 2 seconds
         }
-        canPick = true
+        setTimeout(() => {
+            canPick = true;
+        }, numShuffles * 2000);
     }
 
     win() {
